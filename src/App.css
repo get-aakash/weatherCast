@@ -2,3 +2,19 @@
     font-size: 25px;
     cursor:pointer;
 }
+.circle{
+    font-size: 2700px;
+
+}
+.circle{
+    background: lightblue;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+.display{
+    padding-left: 50px;
+}
+.temp{
+    padding-left: 150px;
+}

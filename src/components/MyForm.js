@@ -2,15 +2,19 @@ import React, { useState } from 'react'
 import { Col, Form, Row, Button } from 'react-bootstrap'
 import { fetchData } from '../utils/axiosHelper'
 
-export default function MyForm() {
+export default function MyForm({weatherData}) {
     const [city, setCity] = useState('')
+    const [data, setData] = useState({})
     const handleChange = (e)=>{
         setCity(e.target.value)
     }
+    
     const handleOnSubmit = async(e)=>{
         e.preventDefault()
-        const data = await fetchData(city)
-        console.log(data)
+        const value = await fetchData(city)
+        setData(value)
+        weatherData(data)
+        
 
     }
     
@@ -27,6 +31,9 @@ export default function MyForm() {
                     <Button type='submit'>
                         <i className="icon fa-solid fa-magnifying-glass mt-1 "></i>
                     </Button>
+                </Col>
+                <Col>
+
                 </Col>
 
             </Row>
